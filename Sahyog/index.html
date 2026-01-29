@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#f97316">
+    <meta name="description" content="SAHAYOG - Village SATHI AI Platform for Rural Employment">
+    <title>SAHAYOG - SATHI AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sathi: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: #f8fafc;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Touch-friendly interactions */
+        .touch-manipulation {
+            touch-action: manipulation;
+        }
+        
+        /* SATHI Pulse Animation */
+        .sathi-pulse {
+            animation: sathi-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes sathi-pulse {
+            0%, 100% { 
+                opacity: 1; 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+            }
+            50% { 
+                opacity: .9; 
+                transform: scale(1.05);
+                box-shadow: 0 0 0 20px rgba(249, 115, 22, 0);
+            }
+        }
+        
+        /* Mic listening glow */
+        .mic-listening {
+            animation: mic-glow 1.5s infinite;
+        }
+        @keyframes mic-glow {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        
+        /* Voice wave animation */
+        .voice-wave {
+            animation: voice-wave 1s ease-in-out infinite;
+        }
+        @keyframes voice-wave {
+            0%, 100% { transform: scaleY(0.3); }
+            50% { transform: scaleY(1); }
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Hide scrollbars but keep functionality */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Safe area for notched phones */
+        .safe-area-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .safe-area-top {
+            padding-top: env(safe-area-inset-top);
+        }
+        
+        /* Gradient backgrounds */
+        .bg-sathi-gradient {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
+        }
+        
+        /* Glass morphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        /* Focus visible for accessibility */
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid #f97316;
+            outline-offset: 2px;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+</head>
+<body class="safe-area-bottom">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

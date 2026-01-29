@@ -1,0 +1,9 @@
+{
+  "name": "SAHAYOG - SATHI AI",
+  "description": "A voice-first, vision-enabled conversational AI platform for rural employment empowerment. Features SATHI, a compassionate AI assistant that guides users through work opportunities, schemes, and grievances.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
